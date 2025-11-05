@@ -1,0 +1,32 @@
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+/* Контейнер со скрытым скроллбаром */
+.scroll-hidden {
+  overflow: auto;                 /* или overflow-y: auto */
+  -ms-overflow-style: none;       /* IE/Edge Legacy */
+  scrollbar-width: none;          /* Firefox */
+}
+.scroll-hidden::-webkit-scrollbar { /* Chrome/Safari/Chromium-браузеры */
+  width: 0;
+  height: 0;
+}
